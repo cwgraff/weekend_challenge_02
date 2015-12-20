@@ -4,7 +4,7 @@ var currentPosition = -1;
 $(document).ready(function(){
 
     getData();
-    makeButtons();
+    //makeButtons();
 
     autoForward();
     $(".button-holder").on("click", ".back", prevThetan);
@@ -17,6 +17,7 @@ $(document).ready(function(){
         url:"/data",
         success: function(data){
             returnInfo = data;
+            makeButtons();
             writeDom(returnInfo);
             nextThetan();
         }
@@ -24,7 +25,7 @@ $(document).ready(function(){
     }
 
     function writeDom(objectArray) {
-        for(i=0; i < returnInfo.people.length; i++) {
+        for(var i=0; i < returnInfo.people.length; i++) {
             $(".people-container").append("<div class='thetan' id='" + i + "'></div>");
             var $el = $(".people-container").children().last();
             $el.append("<h1>" + returnInfo.people[i].name + "</h1>").hide();
@@ -42,6 +43,9 @@ $(document).ready(function(){
 
         $(".button-holder").append("<button class='back'>prev</button>");
         $(".button-holder").append("<button class='forward'>next</button>");
+        for(var i=0; i < returnInfo.people.length; i++){
+            $(".button-holder").append("<button class='tiny' id='tiny" + i + "'></button>");
+        }
     }
 
     function prevThetan() {
@@ -49,11 +53,17 @@ $(document).ready(function(){
         if(currentPosition == 0) {
             $("#19").fadeIn(800);
             $("#" + currentPosition).fadeOut(400);
+            $(".button-holder").find('#tiny' + 19).addClass("highlighted");
+            $(".button-holder").find('#tiny' + currentPosition).removeClass("highlighted");
             currentPosition = 19;
+
         } else {
             $("#" + (currentPosition - 1)).fadeIn(800);
             $("#" + currentPosition).fadeOut(400);
             currentPosition --;
+            $(".button-holder").find('#tiny' + currentPosition).addClass("highlighted");
+            $(".button-holder").find('#tiny' + (currentPosition + 1)).removeClass("highlighted");
+
         }
     }
 
@@ -62,11 +72,15 @@ $(document).ready(function(){
         if(currentPosition == 19) {
             $("#0").fadeIn(800);
             $("#" + currentPosition).fadeOut(400);
+            $(".button-holder").find('#tiny' + 0).addClass("highlighted");
+            $(".button-holder").find('#tiny' + currentPosition).removeClass("highlighted");
             currentPosition = 0;
         } else {
             $("#" + (currentPosition + 1)).fadeIn(800);
             $("#" + currentPosition).fadeOut(400);
             currentPosition ++;
+            $(".button-holder").find('#tiny' + currentPosition).addClass("highlighted");
+            $(".button-holder").find('#tiny' + (currentPosition - 1)).removeClass("highlighted");
         }
-        //clearInterval(nextThetan);
+        //clearInterval(autoForward);
     }
