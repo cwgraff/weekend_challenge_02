@@ -1,3 +1,28 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 .index-point {
     width: 25px;
     height: 25px;
@@ -20,14 +45,19 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#\30 {
+    border: solid #A5C261 3px;
+    background: linear-gradient(to bottom, #E6E6E6, #6897BB);
+}
+
 .thetan {
-    border: solid black 3px;
+    border: solid #6897BB 3px;
     border-radius: 25px;
     position: absolute;
     width: 400px;
     height: 200px;
     text-align: center;
-    background: linear-gradient(to bottom right, #E6E6E6, #A4A4A4);
+    background: linear-gradient(to bottom, #E6E6E6, #A4A4A4);
     top: 60px;
     left: 60px;
 }
@@ -46,9 +76,49 @@ body {
 
 .back {
     float: left;
-    margin: 90px 0 0 8px;
+    margin: 85px 0 0 12px;
+    background-color: #0f0f0f;
+    padding: 8px 5px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    opacity: 0.15;
+    color: #A4A4A4;
+
 }
 .forward {
     float: right;
-    margin: 90px 8px 0 0;
+    margin: 85px 12px 0 0;
+    background-color: #0f0f0f;
+    padding: 8px 5px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    opacity: 0.15;
+    color: #A4A4A4;
+
+}
+.forward:hover,.back:hover {
+    opacity: 0.8;
+}
+.forward:focus,.back:focus {
+    outline: 0;
+}
+
+h1 {
+    font-weight: bold;
+    color: #A5C261;
+    margin: 28px 0 6px 0;
+    font-size: 28px;
+}
+
+h2 {
+    color: #6897BB;
+    margin: 2px 0 14px 0;
+    font-size: 15px;
+}
+
+h3 {
+    font-weight: bold;
+    color: #CC7832;
+    margin: 32px 0 14px 0;
+    font-size: 44px;
 }
