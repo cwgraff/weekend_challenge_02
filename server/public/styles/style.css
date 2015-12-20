@@ -1,0 +1,54 @@
+.index-point {
+    width: 25px;
+    height: 25px;
+    background-color: #dad5d2;
+    border: 1px solid black;
+    float: left;
+    display: inline-block;
+}
+
+.index-point-active {
+    background-color: #ee100d;
+}
+
+.person-shoutout {
+    height: 200px;
+}
+
+body {
+    background-color: #444444;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.thetan {
+    border: solid black 3px;
+    border-radius: 25px;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    background: linear-gradient(to bottom right, #E6E6E6, #A4A4A4);
+    top: 60px;
+    left: 60px;
+}
+.displayed {
+    display: block;
+    z-index: 8000;
+}
+
+.button-holder {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 400px;
+    height: 200px;
+}
+
+.back {
+    float: left;
+    margin: 90px 0 0 8px;
+}
+.forward {
+    float: right;
+    margin: 90px 8px 0 0;
+}
